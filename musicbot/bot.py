@@ -1298,7 +1298,7 @@ class MusicBot(discord.Client):
             )
         return True
 
-    async def cmd_play(self, message, player, channel, author, permissions, leftover_args, song_url):
+    async def cmd_p(self, message, player, channel, author, permissions, leftover_args, song_url):
         """
         Usage:
             {command_prefix}play song_link
@@ -1883,7 +1883,7 @@ class MusicBot(discord.Client):
                 delete_after=30
             )
 
-    async def cmd_summon(self, channel, guild, author, voice_channel):
+    async def cmd_in(self, channel, guild, author, voice_channel):
         """
         Usage:
             {command_prefix}summon
@@ -1927,7 +1927,7 @@ class MusicBot(discord.Client):
 
         return Response(self.str.get('cmd-summon-reply', 'Connected to `{0.name}`').format(author.voice.channel))
 
-    async def cmd_pause(self, player):
+    async def cmd_st(self, player):
         """
         Usage:
             {command_prefix}pause
@@ -1942,7 +1942,7 @@ class MusicBot(discord.Client):
         else:
             raise exceptions.CommandError(self.str.get('cmd-pause-none', 'Player is not playing.'), expire_in=30)
 
-    async def cmd_resume(self, player):
+    async def cmd_pp(self, player):
         """
         Usage:
             {command_prefix}resume
@@ -2044,7 +2044,7 @@ class MusicBot(discord.Client):
                 self.str.get('cmd-remove-noperms', "You do not have the valid permissions to remove that entry from the queue, make sure you're the one who queued it or have instant skip permissions"), expire_in=20
             )
 
-    async def cmd_skip(self, player, channel, author, message, permissions, voice_channel, param=''):
+    async def cmd_s(self, player, channel, author, message, permissions, voice_channel, param=''):
         """
         Usage:
             {command_prefix}skip [force/f]
