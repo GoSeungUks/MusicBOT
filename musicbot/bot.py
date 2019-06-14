@@ -2530,7 +2530,7 @@ class MusicBot(discord.Client):
         await self.disconnect_all_voice_clients()
         raise exceptions.RestartSignal()
 
-    async def cmd_shutdown(self, channel):
+    async def cmd_reboot(self, channel):
         """
         Usage:
             {command_prefix}shutdown
