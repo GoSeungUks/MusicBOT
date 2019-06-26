@@ -1,1 +1,1 @@
-worker: update.py
+worker: run.py
